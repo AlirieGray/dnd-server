@@ -3,14 +3,6 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 
-//*** sequelize ***//
-const Sequelize = require('sequelize');
-// TODO: fix username
-const sequelize = new Sequelize('dnd', 'alirie', null, { dialect: 'postgres' });
-const sync = () => {
-  return sequelize.sync({ force: true })
-}
-
 // allow CORS
 const allowCrossDomain = function(req, res, next) {
   res.header('Access-Control-Allow-Origin', "*");
